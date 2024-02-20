@@ -5,6 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Eco Grove</title>
+  <style>
+    /* Resetting default margin and padding */
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header styles */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8); /* Transparent background with 80% opacity */
+      z-index: 1000; /* Ensure header is on top of other content */
+      transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  #header.opaque {
+      background-color: #ffffff; /* Opaque white background */
+  }
+  
+  #header h1 {
+      margin: 0;
+      font-size: 24px;
+  }
+
+h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 36px; /* Larger font size */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+
+    /* Main section styles */
+    main {
+
+      margin-top: 100px; /* Adjust margin to accommodate fixed header */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Arrange items vertically */
+        align-items: center; /* Center items horizontally */
+        padding: 20px 0; /* Add some padding */
+    }
+
+    /* Product section styles */
+    #products {
+      padding: 20px;
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center; /* Center items horizontally */
+        max-width: 800px; /* Limit width of product section */
+        margin: 0 auto; /* Center product section */
+    }
+
+    /* Product item styles */
+    .product-item {
+        margin: 20px; /* Add some space between product items */
+        padding: 10px; /* Add padding */
+        border: 1px solid #ddd; /* Add border */
+        border-radius: 5px; /* Add border radius */
+        width: calc(33.33% - 40px); /* Set width of product item (33.33% of container width minus margins) */
+        text-align: center; /* Center align text */
+    }
+
+    .product-item img {
+        max-width: 100%; /* Ensure image doesn't exceed container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .product-item h3, .product-item p {
+        margin: 5px 0; /* Add some space between text elements */
+    }
+
+    .product-item .ratings {
+        color: gold; /* Color for rating stars */
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,6 +100,7 @@
       <article class="product-item">
         <h3>DEN PARKA</h3>
         <p>49.90 GBP</p>
+        <div class="ratings">★★★★☆</div> <!-- Ratings with stars -->
         <img src="https://i.pinimg.com/236x/d0/98/15/d098159f019bf116d5ab4426d6d83ee5.jpg" alt="Den Parka">
         <a href="#" class="view-product-btn">View</a>
 
@@ -29,6 +108,7 @@
       <article class="product-item">
         <h3>DEN PARKA</h3>
         <p>49.90 GBP</p>
+        <div class="ratings">★★★★☆</div> <!-- Ratings with stars -->
         <img src="https://i.pinimg.com/236x/51/65/5d/51655dc1fa09586d8d44a6e38a716404.jpg" alt="Den Parka">
         <a href="#" class="view-product-btn">View</a>
 
@@ -38,6 +118,7 @@
     <article class="product-item">
       <h3>DEN PARKA</h3>
       <p>49.90 GBP</p>
+      <div class="ratings">★★★★☆</div> <!-- Ratings with stars -->
       <img src="https://i.pinimg.com/236x/68/7d/f0/687df08c8be138a08e5ebc0eee28a3f0.jpg" alt="Den Parka">
       <a href="#" class="view-product-btn">View</a>
 
@@ -46,6 +127,7 @@
     <article class="product-item">
       <h3>DEN PARKA</h3>
       <p>49.90 GBP</p>
+      <div class="ratings">★★★★☆</div> <!-- Ratings with stars -->
       <img src="https://i.pinimg.com/236x/52/c9/63/52c963fa98f5335a1de07a0257089e0a.jpg" alt="Den Parka">
       <a href="#" class="view-product-btn">View</a>
 
@@ -55,6 +137,7 @@
       <article class="product-item">
         <h3>DEN PARKA</h3>
         <p>49.90 GBP</p>
+        <div class="ratings">★★★★☆</div> <!-- Ratings with stars -->
         <img src="https://i.pinimg.com/236x/23/83/aa/2383aa9b8d7695d225b61c2d5251635c.jpg" alt="Den Parka">
         <a href="#" class="view-product-btn">View</a>
   
@@ -62,5 +145,16 @@
     </section>
   </main>
   <script src="scripts.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      var header = document.getElementById('header');
+      if (window.scrollY > 0) {
+          header.classList.add('opaque');
+      } else {
+          header.classList.remove('opaque');
+      }
+  });
+  
+  </script>
 </body>
 </html>

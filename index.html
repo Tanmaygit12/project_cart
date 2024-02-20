@@ -61,6 +61,17 @@
   #products video {
       max-width: 100%; /* Ensure video doesn't exceed container width */
       max-height: calc(100vh - 5px); /* Adjust height to fit remaining space */
+
+
+      /* Sign In and Sign Up button styles */
+      .signin-btn, .signup-btn {
+          background-color: #FF6347; /* Red background color */
+      }
+  
+      .signin-btn:hover, .signup-btn:hover {
+          background-color: #CD5C5C; /* Darker red on hover */
+      }
+      
   }
   </style>
 </head>
@@ -76,6 +87,8 @@
     <a href="./kids.html">KIDS</a>
     <a href="#">NEW IN</a>
     <a href="./sale.html">SALE</a>
+    <a href="#" class="signin-btn">Sign In</a>
+    <a href="#" class="signup-btn">Sign Up</a>
   </nav>
   <main>
     <section id="products">
